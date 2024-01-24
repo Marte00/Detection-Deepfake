@@ -146,7 +146,10 @@ print(f'Precision: {precision:.6f}')
 print(f'Recall: {recall:.6f}')
 print(f'F1 Score: {f1_score:.6f}')
 ```
-![alt text](https://github.com/Marte00/Detection-Deepfake/image_résultat/image1.png)
+
+Les résulats montre que ResNet50 a une meilleur performance comparé à EfficientNetV2, le pré-entrainainement améliore le score du modèle.
+
+![Screenshot_2](https://github.com/Marte00/Detection-Deepfake/assets/107618271/732f299e-8c4e-41ae-b32d-899caed6c2d9)
 
 
 ## V. Conclusion
