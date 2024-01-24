@@ -119,4 +119,34 @@ model = model_trained
 ```
 ## IV. Evauation & Expérimentation
 
+Pour l'évaluatiob du modèle les métriques classiques précision, rappel et F1-score sont utilisés.
+
+```ruby
+from sklearn.metrics import precision_recall_fscore_support
+
+model.eval()
+all_predictions = []
+all_labels = []
+
+with torch.no_grad():
+    for inputs, labels in dataloaders['test']:
+        inputs = inputs.to(device)
+        labels = labels.to(device)
+
+        outputs = model(inputs)
+        probs = F.softmax(outputs, dim=1)
+        _, predicted = torch.max(probs, 1)
+
+        all_predictions.extend(predicted.cpu().numpy())
+        all_labels.extend(labels.cpu().numpy())
+
+precision, recall, f1_score, _ = precision_recall_fscore_support(all_labels, all_predictions, average='weighted')
+
+print(f'Precision: {precision:.6f}')
+print(f'Recall: {recall:.6f}')
+print(f'F1 Score: {f1_score:.6f}')
+```
+
+
+
 ## V. Conclusion
