@@ -82,9 +82,9 @@ Le modèle est chargé avec les poids entrainés sur Imagenet1K, une modificatio
 #chargement du modèle avec les poids pré-entrainés.
 model = models.resnet50(weights = models.ResNet50_Weights.DEFAULT).to(device)
 
-# afin de figer ou pas les poids 
+# fige les poids du modèle 
 for param in model.parameters():
- param.requires_grad = True
+ param.requires_grad = False
 
 # modification de la couche FC
 model.fc = nn.Sequential(
