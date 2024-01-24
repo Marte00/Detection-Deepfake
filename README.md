@@ -155,17 +155,17 @@ Nous avons comparé les résulats en fonction de la partie du réseau qui est en
 ![image2](https://github.com/Marte00/Detection-Deepfake/assets/107618271/af666a93-839d-420c-acd8-1047b02711e8)
 
 
-Nous pouvons constater que la courbe de loss ne converge pas bien et que le modèle n'apprend pas sur notre dataset, cependant on remarque de bon résulat qui sont dû au pré-entraînement du modèle ResNet sur ImageNet. Cela peut être dû à notre dataset qui est petit et que les poids de ImageNet prennent le dessus.
+Nous pouvons constater que la courbe de loss ne converge pas bien et que le modèle n'apprend pas sur notre dataset, cependant on remarque de bon résultat qui sont dû au pré-entraînement du modèle ResNet sur ImageNet. Cela peut être dû à notre dataset qui est petit et que les poids de ImageNet prennent le dessus.
 
 ![image3](https://github.com/Marte00/Detection-Deepfake/assets/107618271/6ad1088b-cfe7-4c76-bee5-fa093ff3b0e1)
 ![image4](https://github.com/Marte00/Detection-Deepfake/assets/107618271/1fd4e97c-7bf1-4690-b8b7-748f2dbdbaf2)
 ![image5](https://github.com/Marte00/Detection-Deepfake/assets/107618271/ee2d4d9f-ed45-4fdc-8085-3ccc568dac7e)
 
 
-Afin de visualisé la zone que le modèle regarde nous avons généré le heat map de chaque couche du réseau, nous pouvons observer que sur la couche d'entrée le modèle se concentre sur l'ensemble de l'image au fur et à mesure une zone précise se dessine et montre la partie qui est prise en compte par le modèle. 
+Afin de visualiser la zone que le modèle regarde nous avons généré le heat map de chaque couche du réseau, nous pouvons observer que sur la couche d'entrée le modèle se concentre sur l'ensemble de l'image au fur et à mesure une zone précise se dessine et montre la partie qui est prise en compte par le modèle. 
 ![image6](https://github.com/Marte00/Detection-Deepfake/assets/107618271/2ddea18c-1cc9-450c-98f1-18f5a3d446b9)
 
-Sur les ensembles inconnus, nous voyons que notre modèle ne généralise pas car le modèle se trompe beaucoup sur Midjourney et Dalle-E bien que avec stable diffusion nous avons 23 sur 100 d'images bien classées le modèle a du mal. Cependant pour les images réelles, elle sont tous bien classées car le modèle est pré-entraîné sur ImageNet et à cause du sur-apprentisasage. Sans augmentation des données, on voit une nette amélioration sur les prédictions bien qu'il reste un grand nombre d'erreurs il y a une amélioration. L'apprentissage avec transformé de Fourier améliore la prédiction sur stable diffusion
+Sur les ensembles inconnus, nous voyons que notre modèle ne généralise pas car le modèle se trompe beaucoup sur Midjourney et Dalle-E bien qu' avec stable diffusion nous avons 23 sur 100 d'images bien classées le modèle a du mal. Cependant pour les images réelles, elles sont toutes bien classées car le modèle est pré-entraîné sur ImageNet. Sans augmentation des données, on voit une nette amélioration sur les prédictions bien qu'il reste un grand nombre d'erreurs il y a une amélioration. L'apprentissage avec transformé de Fourier améliore la prédiction sur stable diffusion cependant les résultats sont mitigés sur les ensembles Dalle-E et Midjourney, de plus on perd en nombre d'image réelle bien classée qui peut être dû que les images réelles sont variés et complexe donc difficile d'être caractérisé seulement par le transformé de Fourier. Il faudrait diversifier et augmenter le dataset pour tester et voir l'impact afin de comparer et déterminer ce qui marche ou ne marche pas.
 
 Modèle entraîné avec augmentation des données:
 ![image7](https://github.com/Marte00/Detection-Deepfake/assets/107618271/a5d60f17-a7d8-47d0-ba4d-8855a778543a)
