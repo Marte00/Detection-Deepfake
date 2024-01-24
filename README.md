@@ -105,7 +105,18 @@ for name, param in model.named_parameters():
       #param.requires_grad = True
     print(name,param.requires_grad)
 ```
+La fonction de perte utilisée est la CrossEntropyLoss avec l'optimiseur Adam, le learning rate est à 0.001 : 
 
+```ruby
+criterion = nn.CrossEntropyLoss()
+optimizer = optim.Adam(model.parameters(),lr=0.001)
+```
+
+Entrainement du modèle : 
+```ruby
+model_trained, val_loss, train_loss = train_model(model, criterion, optimizer, num_epochs=20)
+model = model_trained
+```
 ## IV. Evauation & Expérimentation
 
 ## V. Conclusion
