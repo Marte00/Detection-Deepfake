@@ -146,7 +146,7 @@ print(f'Precision: {precision:.6f}')
 print(f'Recall: {recall:.6f}')
 print(f'F1 Score: {f1_score:.6f}')
 ```
-![alt text](https://github.com/Marte00/Detection-Deepfake/image_résultat/image1.png?raw=true)
+![alt text](https://github.com/Marte00/Detection-Deepfake/image_résultat/image1.png)
 
 
 ## V. Conclusion
