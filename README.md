@@ -37,6 +37,7 @@ data_transforms = {
         transforms.Resize((224,224)),
         transforms.RandomAffine(0, shear=10, scale=(0.8,1.2)),
         transforms.RandomHorizontalFlip(),
+        transforms.RandomVerticalFlip(),
         transforms.ToTensor(),
         normalize
     ]),
