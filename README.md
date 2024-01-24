@@ -151,5 +151,12 @@ Les résulats montre que ResNet50 a une meilleur performance comparé à Efficie
 
 ![Screenshot_2](https://github.com/Marte00/Detection-Deepfake/assets/107618271/732f299e-8c4e-41ae-b32d-899caed6c2d9)
 
+Nous avons comparé les résulats en fonction de la partie du réseau qui est entrapiné voici les résulats que nous avons obtenus: 
+![image2](https://github.com/Marte00/Detection-Deepfake/assets/107618271/af666a93-839d-420c-acd8-1047b02711e8)
+
+![image3](https://github.com/Marte00/Detection-Deepfake/assets/107618271/6ad1088b-cfe7-4c76-bee5-fa093ff3b0e1)
+![image4](https://github.com/Marte00/Detection-Deepfake/assets/107618271/1fd4e97c-7bf1-4690-b8b7-748f2dbdbaf2)
+![image5](https://github.com/Marte00/Detection-Deepfake/assets/107618271/ee2d4d9f-ed45-4fdc-8085-3ccc568dac7e)
+![image6](https://github.com/Marte00/Detection-Deepfake/assets/107618271/2ddea18c-1cc9-450c-98f1-18f5a3d446b9)
 
 ## V. Conclusion
