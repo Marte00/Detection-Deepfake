@@ -91,6 +91,19 @@ model.fc = nn.Sequential(
                nn.Linear(2048, 128),
                nn.ReLU(inplace=True),
                nn.Linear(128, 2)).to(device)
+
+# On fige ou pas un ou plusieurs couches de ResNet50
+layer1 = "layer4"
+layer2 = "layer3"
+#layer3 = "layer2"
+for name, param in model.named_parameters():
+    if layer1 in name:
+      param.requires_grad = True
+    if layer2 in name:
+      param.requires_grad = True
+    #if layer3 in name:
+      #param.requires_grad = True
+    print(name,param.requires_grad)
 ```
 
 ## IV. Evauation & Expérimentation
