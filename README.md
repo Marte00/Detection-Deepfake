@@ -8,6 +8,8 @@ La détection d’images Deepfake est une tâche cruciale dans la lutte contre l
 Les données utilisées pour l'entraînement proviennent du dataset [https://huggingface.co/datasets/ChristophSchuhmann/improved_aesthetics_6plus](url) pour les images réelles et [https://huggingface.co/datasets/poloclub/diffusiondb](url) pour les images fakes.
 notre dataset est composé de 2000 images en total équilibré sur 2 classes de type réelles (0) ou fakes (1). Il sera ensuite séparé en ensemble de training, validation et de test dans les proportions 80%/10%/10% tous équilibrés.
 
+Afin de tester si notre modèle généralise sur des images générées par d'autres modèles inconnus, nous introduisons 3 ensembles (200 images par ensembles) de tests contenant respectivement des images de Midjourney, Dalle-E et Stable Diffusion V1.5. Les images réelles sont prises au hasard dans ImageNet.
+
 ### a) Augmentation des donnés
 Un Horizontal Flip, Vertical Flip et découpage d'une image en 4 sous images (patch) sont les principales techniques utilisées pour l'augmentation des données.
 
@@ -74,6 +76,22 @@ data_transforms2 = {
 }
 ```
 ## III. Finetuning avec ResNet50
+Le modèle est chargé avec les poids entrainés sur Imagenet1K, une modification de la couches Fully Connected est apporté afin que la sorie soit de 2 classes au lieu de 1000 classes.
+
+```ruby
+#chargement du modèle avec les poids pré-entrainés.
+model = models.resnet50(weights = models.ResNet50_Weights.DEFAULT).to(device)
+
+# afin de figer ou pas les poids 
+for param in model.parameters():
+ param.requires_grad = True
+
+# modification de la couche FC
+model.fc = nn.Sequential(
+               nn.Linear(2048, 128),
+               nn.ReLU(inplace=True),
+               nn.Linear(128, 2)).to(device)
+```
 
 ## IV. Evauation & Expérimentation
 
