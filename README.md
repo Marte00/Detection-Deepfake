@@ -16,7 +16,7 @@ Les images sont redimentionnées, normalisé, application du RandomAffine et par
 
 A noté: le dataset [https://huggingface.co/datasets/ChristophSchuhmann/improved_aesthetics_6plus](url) n'est plus disponible malheureusement.
 
-`import numpy as np
+```import numpy as np
 %matplotlib inline
 import matplotlib.pyplot as plt
 from PIL import Image
@@ -70,7 +70,7 @@ data_transforms2 = {
         FourierTransform()
     ])
 }
-`
+```
 ## Finetuning avec ResNet50
 
 ## Evauation & Expérimentation
