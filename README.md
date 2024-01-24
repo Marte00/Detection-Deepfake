@@ -165,8 +165,15 @@ Nous pouvons constater que la courbe de loss ne converge pas bien et que le mod�
 Afin de visualisé la zone que le modèle regarde nous avons généré le heat map de chaque couche du réseau, nous pouvons observer que sur la couche d'entrée le modèle se concentre sur l'ensemble de l'image au fur et à mesure une zone précise est prise en compte pas le modèle. 
 ![image6](https://github.com/Marte00/Detection-Deepfake/assets/107618271/2ddea18c-1cc9-450c-98f1-18f5a3d446b9)
 
+Sur les ensembles inconnus, nous voyons que notre modèle ne généralise pas car le modèle se trompe beaucoup sur Midjourney et Dalle-E bien que avec stable diffusion nous avons 23 sur 100 d'images bien classées le modèle a du mal. Cependant pour les images réelles, elle sont tous bien classées car le modèle est pré-entraîné sur ImageNet et à cause du sur-apprentisasage.
+
+Modèle entraîné avec augmentation des données:
 ![image7](https://github.com/Marte00/Detection-Deepfake/assets/107618271/a5d60f17-a7d8-47d0-ba4d-8855a778543a)
+
+Modèle entraîné sans augmentation des données:
 ![image8](https://github.com/Marte00/Detection-Deepfake/assets/107618271/733592bd-df78-4cb5-a0d6-42c86d0b4472)
+
+Modèle entraîné sur le Transformé de Fourier des images:
 ![image10](https://github.com/Marte00/Detection-Deepfake/assets/107618271/0b6d9154-7013-4205-a560-e304b8a5e5c6)
 
 ## V. Conclusion
