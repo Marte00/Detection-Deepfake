@@ -14,6 +14,8 @@ Un Horizontal Flip, Vertical Flip et découpage d'une image en 4 sous images (pa
 ### Pré-traitements
 Les images sont redimentionnées, normalisé, application du RandomAffine et par la suite un Transformé de Fourier.
 
+A noté: le dataset [https://huggingface.co/datasets/ChristophSchuhmann/improved_aesthetics_6plus](url) n'est plus disponible malheureusement.
+
 `import numpy as np
 %matplotlib inline
 import matplotlib.pyplot as plt
@@ -69,7 +71,6 @@ data_transforms2 = {
     ])
 }
 `
-A noté: le dataset [https://huggingface.co/datasets/ChristophSchuhmann/improved_aesthetics_6plus](url) n'est plus disponible malheureusement.
 ## Finetuning avec ResNet50
 
 ## Evauation & Expérimentation
